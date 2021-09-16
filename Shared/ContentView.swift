@@ -9,11 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-        Form {
-            Text("Hello all!!")
+        
+        VStack(alignment: .center, spacing: 20) {
+            
+            HStack {
+                
+                Text("Title 1")
+                Text("Title 2")
+                Text("Title 3")
+            }
+            
+            HStack {
+                
+                Text("Title 1")
+                Text("Title 2")
+                Text("Title 3")
+                
+            }
+            HStack {
+                
+                Text("Title 1")
+                Text("Title 2")
+                Text("Title 3")
+            }
+            
+            Button(action: {
+                print("Edit button was tapped")
+            }) {
+                HStack(spacing: 20) {
+                    Text("Eliminar")
+                    Image(systemName: "trash")
+                }
+            }
+            
+            
         }
+        
     }
 }
 
