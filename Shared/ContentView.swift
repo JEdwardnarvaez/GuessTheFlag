@@ -8,45 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
+    
+    var correctAnswer = Int.random(in: 0...2)
+    
     var body: some View {
         
-        VStack(alignment: .center, spacing: 20) {
+        ZStack {
+            Color.blue.edgesIgnoringSafeArea(.all)
             
-            HStack {
+            VStack(spacing: 30) {
                 
-                Text("Title 1")
-                Text("Title 2")
-                Text("Title 3")
-            }
-            
-            HStack {
+                VStack {
+                    Text("Tap the flag of").font(.title)
+                        .foregroundColor(.white)
+                    
+                    Text(countries[correctAnswer]).bold()
+                        .foregroundColor(.white)
+                }
                 
-                Text("Title 1")
-                Text("Title 2")
-                Text("Title 3")
-                
-            }  
-            HStack {
-                
-                Text("Title 1")
-                Text("Title 2")
-                Text("Title 3")
-            }
-            
-            Button(action: {
-                print("Edit button was tapped")
-            }) {
-                HStack(spacing: 20) {
-                    Text("Eliminar")
-                    Image(systemName: "trash")
+                ForEach(0 ..< 3) { number in
+                    Button(action: {
+                        // flag was tapped
+                        
+                    }) {
+                        Image(self.countries[number])
+                            .renderingMode(.original)
+                    }
                 }
             }
-            
-            
         }
-        
     }
 }
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
