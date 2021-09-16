@@ -25,7 +25,7 @@ struct ContentView: View {
                 Text("Title 2")
                 Text("Title 3")
                 
-            } 
+            }  
             HStack {
                 
                 Text("Title 1")
